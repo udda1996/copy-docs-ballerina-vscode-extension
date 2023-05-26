@@ -1,4 +1,4 @@
-# Copyright (c) 2022, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+#Copyright (c) 2023, WSO2 LLC. (http://www.wso2.com) All Rights Reserved.
 #
 # WSO2 Inc. licenses this file to you under the Apache License,
 # Version 2.0 (the "License"); you may not use this file except
@@ -15,14 +15,13 @@
 # under the License.
 
 # Project information
-site_name: Visual Studio Code Extension
+site_name: Ballerina Extension for Visual Studio Code
 site_description: Ballerina Visual Studio Code Extension
 site_author: WSO2
 site_url: https://wso2.com/ballerina/vscode/docs/
 
 # Repository
 repo_name: wso2/docs-ballerina-vscode-extension
-repo_url: https://github.com/wso2/docs-ballerina-vscode-extension/
 edit_uri: https://github.com/wso2/docs-ballerina-vscode-extension/tree/main/en/docs
 dev_addr: localhost:8000
 
@@ -33,21 +32,41 @@ copyright: Copyright © WSO2 LLC (2022-2023)
 theme:
   name: material
   custom_dir: theme/material
-  palette:
-    primary: indigo
-    accent: indigo
-  logo: images/wso2-logo-white.svg
-  favicon: images/favicon.png
-  discord: images/discord-help-icon.svg
-  highlightjs: true
-  feature:
-    tabs: true
+  logo: assets/images/wso2-logo-white.svg
   font:
-    text: 'Montserrat'
+    text: Montserrat
+  favicon: assets/images/favicon.png
+  features:    
+    - navigation.top
+    - navigation.sections
+    - content.code.copy
+    - content.action.edit
   language: 'en'
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  
+  icon:
+    logo: logo
 #Breaks build if there's a warning
 strict: false
-
 # Navigation
 nav:
   - Home: index.md
@@ -66,10 +85,18 @@ nav:
       - Commands: edit-the-code/commands.md
   - Visual programming:
       - Sequence Diagram view: visual-programming/sequence-diagram-view.md
-      - Project Design view: visual-programming/project-design-view.md
+      - Architecture View:
+          - Architecture Diagram: visual-programming/architecture-view/architecture-diagram.md
+          - Design using the Architecture Diagram: visual-programming/architecture-view/design-using-architecture-diagram.md
+          - Type Diagram: visual-programming/architecture-view/type-diagram.md
       - Data Mapper: visual-programming/data-mapper.md
+      - HTTP API Designer: visual-programming/http-api-designer.md
+      - GraphQL Designer: visual-programming/graphql-designer.md
   - Notebooks: notebooks.md
-  - Debug the code: debug-the-code.md
+  - Debug the code:
+      - Debugging overview: debug-the-code/debugging-overview.md
+      - Debugging features: debug-the-code/debugging-features.md
+      - Debugging configurations: debug-the-code/debugging-configurations.md
   - Configure the extension: configure-the-extension.md
   - References:
       - Statement Editor: 
@@ -81,17 +108,14 @@ nav:
       - Convert JSON to records: references/convert-json-to-records.md
   - Release notes:
       - Version 3.3.0: release-notes/version-3.3.0.md
+      - Version 4.0.0: release-notes/version-4.0.0.md
   - License: license.md
   
 # Extensions
 markdown_extensions:
   - markdown.extensions.admonition
-  - markdown.extensions.codehilite:
-      linenums: true
-      use_pygments: false
   - markdown.extensions.def_list
   - markdown.extensions.footnotes
-  - markdown.extensions.meta
   - markdown.extensions.toc:
       permalink: true
       toc_depth: 3
@@ -114,32 +138,30 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: docs
   - attr_list
-  - markdown_include.include:
-      base_path: docs
 plugins:
   - search
-#  - markdownextradata: {}
-
+  # - glightbox
+  - markdownextradata: {}
+  
 extra_css:
-  - assets/lib/highlightjs/default.min.css
-  - assets/css/theme.css
-  - assets/css/prism.css
+  
+  - assets/lib/highlightjs/styles/vs.min.css
+  - assets/css/blue-palette-alt2.css
+  - assets/css/choreotheme.css
   - assets/lib/json-formatter/json-formatter.css
+  - assets/css/config-catalog.css
+  - assets/lib/fontawesome-free-6.3.0-web/css/all.min.css  
+
+
 extra_javascript:
   - assets/lib/json-formatter/json-formatter.umd.js
   - assets/lib/highlightjs/highlight.min.js
-  - assets/lib/prism/prism.js
-  - assets/js/theme.js
-  - assets/js/prism-ballerina.js
-  - assets/lib/backtotop/js/util.js
-  - assets/lib/backtotop/js/main.js
+  - assets/js/choreotheme.js
 extra:
   social:
-    - type: github
+    - icon: fontawesome/brands/github
       link: https://github.com/wso2
-    - type: twitter
+    - icon: fontawesome/brands/twitter
       link: https://twitter.com/wso2
-    - type: linkedin
+    - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/wso2
-  site_version: 1.0.0
-  #base_path: http://localhost:8000

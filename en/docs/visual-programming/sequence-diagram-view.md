@@ -9,15 +9,15 @@ This visual representation has its roots in sequence diagrams and can capture ho
 
 There are two methods for switching to the graphical mode using the VS Code extension.
 
--   Execute the `Ballerina: Show Diagram` command from the command palette.
+-   Using the `Visualize` code lense that appears in the editor.
     
-    <img src="https://wso2.com/ballerina/vscode/docs/img/visual-programming/sequence-diagram-view/show-diagram-command-palette.png" class="cInlineImage-half"/>
+    <img src="https://wso2.com/ballerina/vscode/docs/img/visual-programming/sequence-diagram-view/visualize-code-block.png" class="cInlineImage-half"/>
 
 -   Click `Show Diagram` in the editor group.
     
     <img src="https://wso2.com/ballerina/vscode/docs/img/visual-programming/sequence-diagram-view/editor-group-button.png" class="cInlineImage-full"/>
 
-Shown below is the code editor and graphical editor in view.
+Shown below is the code editor and graphical editor in view graphical mode is focused on the function main.
 
 <img src="https://wso2.com/ballerina/vscode/docs/img/visual-programming/sequence-diagram-view/graphical-view.png" class="cInlineImage-full"/>
 
@@ -127,10 +127,3 @@ You can interact with the diagram using the `plus` icons placed in the lifeline.
 function execution flow by clicking **Add**.
 
 <img src="https://wso2.com/ballerina/vscode/docs/img/visual-programming/sequence-diagram-view/diagram-interaction.gif" class="cInlineImage-full"/>
-
-## Related topics
-
-See the following topics to explore graphical coding further.
-
-- [Data Mapper](data-mapper.md)
-- [Project Design view](project-design-view.md)
